@@ -1,6 +1,5 @@
 // Styles
 import "../styles/ProjectView.css";
-
 // Material ui
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
@@ -19,12 +18,12 @@ function ProjectView() {
   );
 
   // task jsx
-  const task = (title) => {
+  const task = (title) => (
     <div className="projectView__contentItemTask">
       <RadioButtonUncheckedOutlinedIcon />
       <p>{title}</p>
-    </div>;
-  };
+    </div>
+  );
   return (
     <div className="projectView">
       <div className="projectView__header">
