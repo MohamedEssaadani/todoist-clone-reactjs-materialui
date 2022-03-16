@@ -72,4 +72,26 @@
   border: 0.5px solid lightgray;
   border-radius: 5px;
   padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.projectView__contentItemTask > p {
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.projectView__addTask {
+  display: flex;
+  align-items: center;
+}
+
+.projectView__addTask > p {
+  font-size: 13px;
+  color: gray;
+}
+
+.projectView__contentItemHeaderIcon:hover {
+  background-color: whitesmoke;
+  border-radius: 4px;
 }

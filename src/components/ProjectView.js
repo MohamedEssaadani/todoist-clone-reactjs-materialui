@@ -6,8 +6,16 @@ import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutline
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import RadioButtonUncheckedOutlinedIcon from "@mui/icons-material/RadioButtonUncheckedOutlined";
+import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 
 function ProjectView() {
+  const addTask = () => (
+    <div className="projectView__addTask">
+      <AddOutlinedIcon />
+      <p>Ajouter une tache </p>
+    </div>
+  );
   return (
     <div className="projectView">
       <div className="projectView__header">
@@ -36,25 +44,37 @@ function ProjectView() {
         <div className="projectView__contentItem">
           <p className="projectView__contentItemHeader">
             <h3>TODO</h3>
-            <MoreHorizOutlinedIcon />
+            <MoreHorizOutlinedIcon className="projectView__contentItemHeaderIcon" />
           </p>
-          <div className="projectView__contentItemTask">Hey</div>
+          <div className="projectView__contentItemTask">
+            <RadioButtonUncheckedOutlinedIcon />
+            <p>Do todoiest clone back end</p>
+          </div>
+          {addTask()}
         </div>
 
         <div className="projectView__contentItem">
           <p className="projectView__contentItemHeader">
             <h3>IN PROGRESS</h3>
-            <MoreHorizOutlinedIcon />
+            <MoreHorizOutlinedIcon className="projectView__contentItemHeaderIcon" />
           </p>
-          <div className="projectView__contentItemTask">Hey</div>
+          <div className="projectView__contentItemTask">
+            <RadioButtonUncheckedOutlinedIcon />
+            <p>Do todoist clone front end</p>
+          </div>
+          {addTask()}
         </div>
 
         <div className="projectView__contentItem">
           <p className="projectView__contentItemHeader">
             <h3>DONE</h3>
-            <MoreHorizOutlinedIcon />
+            <MoreHorizOutlinedIcon className="projectView__contentItemHeaderIcon" />
           </p>
-          <div className="projectView__contentItemTask">Hey</div>
+          <div className="projectView__contentItemTask">
+            <RadioButtonUncheckedOutlinedIcon />
+            <p>do linkedin clone </p>
+          </div>
+          {addTask()}
         </div>
       </div>
     </div>
