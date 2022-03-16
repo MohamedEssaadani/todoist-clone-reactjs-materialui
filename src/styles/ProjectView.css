@@ -90,3 +90,8 @@
   font-size: 13px;
   color: gray;
 }
+
+.projectView__contentItemHeaderIcon:hover {
+  background-color: whitesmoke;
+  border-radius: 4px;
+}

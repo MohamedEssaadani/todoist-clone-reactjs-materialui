@@ -44,7 +44,7 @@ function ProjectView() {
         <div className="projectView__contentItem">
           <p className="projectView__contentItemHeader">
             <h3>TODO</h3>
-            <MoreHorizOutlinedIcon />
+            <MoreHorizOutlinedIcon className="projectView__contentItemHeaderIcon" />
           </p>
           <div className="projectView__contentItemTask">
             <RadioButtonUncheckedOutlinedIcon />
@@ -56,7 +56,7 @@ function ProjectView() {
         <div className="projectView__contentItem">
           <p className="projectView__contentItemHeader">
             <h3>IN PROGRESS</h3>
-            <MoreHorizOutlinedIcon />
+            <MoreHorizOutlinedIcon className="projectView__contentItemHeaderIcon" />
           </p>
           <div className="projectView__contentItemTask">
             <RadioButtonUncheckedOutlinedIcon />
@@ -68,7 +68,7 @@ function ProjectView() {
         <div className="projectView__contentItem">
           <p className="projectView__contentItemHeader">
             <h3>DONE</h3>
-            <MoreHorizOutlinedIcon />
+            <MoreHorizOutlinedIcon className="projectView__contentItemHeaderIcon" />
           </p>
           <div className="projectView__contentItemTask">
             <RadioButtonUncheckedOutlinedIcon />
