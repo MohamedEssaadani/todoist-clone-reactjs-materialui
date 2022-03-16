@@ -1,0 +1,24 @@
+.sidebar {
+  flex: 1;
+  background-color: #fafafa;
+}
+
+.sidebar__menu {
+  margin: 40px;
+}
+
+.sidebar__menuItem {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sidebar__menuItem > p {
+  margin-left: 10px;
+}
+
+.sidebar__menuItem:hover {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding-right: 20px;
+}
