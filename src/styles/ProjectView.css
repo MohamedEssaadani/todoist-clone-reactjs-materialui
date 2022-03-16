@@ -1,0 +1,75 @@
+.projectView {
+  margin-top: 20px;
+  margin-left: 20px;
+  flex: 3;
+  height: 85vh;
+  margin-right: 20px;
+}
+
+.projectView__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.projectView__headerInfos {
+  display: flex;
+  align-items: center;
+}
+
+.projectView__headerInfosItem {
+  margin-right: 20px;
+  color: #808080;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.projectView__headerInfosItem:hover {
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+
+.projectView__headerInfos > p > span {
+  margin-left: 5px;
+}
+
+.projectView__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.projectView__contentItem {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.projectView__contentItem:hover {
+  border: 0.2px solid lightgray;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+}
+
+.projectView__contentItemHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.projectView__contentItemHeader > h3 {
+  font-size: 14px;
+}
+
+.projectView__contentItemTask {
+  border: 0.5px solid lightgray;
+  border-radius: 5px;
+  padding: 10px;
+}
