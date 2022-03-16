@@ -1,6 +1,9 @@
 .sidebar {
   flex: 1;
   background-color: #fafafa;
+  padding-left: 10px;
+  padding-right: 20px;
+  height: 100vh;
 }
 
 .sidebar__menu {
@@ -15,10 +18,11 @@
 
 .sidebar__menuItem > p {
   margin-left: 10px;
+  font-size: 14px;
 }
 
 .sidebar__menuItem:hover {
   background-color: whitesmoke;
   border-radius: 10px;
-  padding-right: 20px;
+  width: 100%;
 }
