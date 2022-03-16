@@ -10,12 +10,21 @@ import RadioButtonUncheckedOutlinedIcon from "@mui/icons-material/RadioButtonUnc
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 
 function ProjectView() {
+  // add task jsx
   const addTask = () => (
     <div className="projectView__addTask">
       <AddOutlinedIcon />
       <p>Ajouter une tache </p>
     </div>
   );
+
+  // task jsx
+  const task = (title) => {
+    <div className="projectView__contentItemTask">
+      <RadioButtonUncheckedOutlinedIcon />
+      <p>{title}</p>
+    </div>;
+  };
   return (
     <div className="projectView">
       <div className="projectView__header">
@@ -46,10 +55,9 @@ function ProjectView() {
             <h3>TODO</h3>
             <MoreHorizOutlinedIcon className="projectView__contentItemHeaderIcon" />
           </p>
-          <div className="projectView__contentItemTask">
-            <RadioButtonUncheckedOutlinedIcon />
-            <p>Do todoiest clone back end</p>
-          </div>
+          {/* Task */}
+          {task("Do Todoist clone backend")}
+          {/* Add task */}
           {addTask()}
         </div>
 
@@ -58,10 +66,9 @@ function ProjectView() {
             <h3>IN PROGRESS</h3>
             <MoreHorizOutlinedIcon className="projectView__contentItemHeaderIcon" />
           </p>
-          <div className="projectView__contentItemTask">
-            <RadioButtonUncheckedOutlinedIcon />
-            <p>Do todoist clone front end</p>
-          </div>
+          {/* Task */}
+          {task("Do todoist clone front end")}
+          {/* Add task */}
           {addTask()}
         </div>
 
@@ -70,10 +77,9 @@ function ProjectView() {
             <h3>DONE</h3>
             <MoreHorizOutlinedIcon className="projectView__contentItemHeaderIcon" />
           </p>
-          <div className="projectView__contentItemTask">
-            <RadioButtonUncheckedOutlinedIcon />
-            <p>do linkedin clone </p>
-          </div>
+          {/* Task */}
+          {task("Do linkedin clone")}
+          {/* Add task */}
           {addTask()}
         </div>
       </div>
