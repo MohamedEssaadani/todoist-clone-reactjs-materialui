@@ -26,3 +26,19 @@
   border-radius: 10px;
   width: 100%;
 }
+
+.sidebar__projectsMenu {
+  margin-left: 20px;
+}
+
+.sidebar__projectsMenuProject {
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sidebar__projectsMenuArchived {
+  color: lightgray;
+  font-size: 13px;
+  cursor: pointer;
+}
