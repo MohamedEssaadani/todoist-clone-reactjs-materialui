@@ -46,7 +46,7 @@ function ProjectView() {
         <ProjectItem category={"TODO"} addTaskJSX={addTaskJSX} />
 
         {/* In progress */}
-        <ProjectItem category={"IN PROGRESS"} addTaskJSX={addTaskJSX} />
+        <ProjectItem category={"INPROGRESS"} addTaskJSX={addTaskJSX} />
 
         {/* Done */}
         <ProjectItem category={"DONE"} addTaskJSX={addTaskJSX} />
