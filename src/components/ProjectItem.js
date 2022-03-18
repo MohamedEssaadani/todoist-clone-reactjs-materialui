@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
+// Material ui
 import RadioButtonUncheckedOutlinedIcon from "@mui/icons-material/RadioButtonUncheckedOutlined";
 import { MoreHorizOutlined } from "@mui/icons-material";
 
@@ -6,20 +8,17 @@ function ProjectItem({ category, addTaskJSX }) {
   const [tasks, setTasks] = useState([]);
 
   // if todo get tasks of todo
-  const getTodo = () => {
+  const getTasks = async () => {
     //   /tasks/byCategory?name=TODO
-    
-    setTasks([
-      {
-        id: 1,
-        title: "xyz todo",
-      },
-      {
-        id: 2,
-        title: "sss todo",
-      },
-    ]);
-    console.log(category);
+    const { data } = await axios.get(
+      process.env.REACT_APP_BACKEND_URL +
+        "/" +
+        process.env.REACT_APP_TASK_SERVICE +
+        "/byCategory?name=" +
+        category
+    );
+
+    setTasks(data);
   };
 
   // if in progress get tasks of in progress
@@ -43,8 +42,7 @@ function ProjectItem({ category, addTaskJSX }) {
   };
 
   useEffect(() => {
-    if (category === "TODO") getTodo();
-    if (category === "IN PROGRESS") getInProgress();
+    getTasks();
   }, [category]);
   // task jsx
   const task = (id, title) => (
@@ -57,7 +55,7 @@ function ProjectItem({ category, addTaskJSX }) {
   return (
     <div className="projectView__contentItem">
       <p className="projectView__contentItemHeader">
-        <h3>TODO</h3>
+        <h3>{category}</h3>
         <MoreHorizOutlined className="projectView__contentItemHeaderIcon" />
       </p>
       {/* Task */}
