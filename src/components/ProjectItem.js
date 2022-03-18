@@ -1,15 +1,54 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import RadioButtonUncheckedOutlinedIcon from "@mui/icons-material/RadioButtonUncheckedOutlined";
 import { MoreHorizOutlined } from "@mui/icons-material";
 
 function ProjectItem({ category, addTaskJSX }) {
-  // if todo get tasks of todo
-  // if in progress get tasks of in progress
-  // if done get tasks of done
+  const [tasks, setTasks] = useState([]);
 
+  // if todo get tasks of todo
+  const getTodo = () => {
+    //   /tasks/byCategory?name=TODO
+    
+    setTasks([
+      {
+        id: 1,
+        title: "xyz todo",
+      },
+      {
+        id: 2,
+        title: "sss todo",
+      },
+    ]);
+    console.log(category);
+  };
+
+  // if in progress get tasks of in progress
+  const getInProgress = () => {
+    console.log(category);
+    setTasks([
+      {
+        id: 1,
+        title: "xyz in progress",
+      },
+      {
+        id: 2,
+        title: "sss inprogress",
+      },
+    ]);
+  };
+
+  // if done get tasks of done
+  const getDone = () => {
+    console.log(category);
+  };
+
+  useEffect(() => {
+    if (category === "TODO") getTodo();
+    if (category === "IN PROGRESS") getInProgress();
+  }, [category]);
   // task jsx
-  const task = (title) => (
-    <div className="projectView__contentItemTask">
+  const task = (id, title) => (
+    <div className="projectView__contentItemTask" key={id}>
       <RadioButtonUncheckedOutlinedIcon />
       <p>{title}</p>
     </div>
@@ -22,7 +61,7 @@ function ProjectItem({ category, addTaskJSX }) {
         <MoreHorizOutlined className="projectView__contentItemHeaderIcon" />
       </p>
       {/* Task */}
-      {task("Do Todoist clone backend")}
+      {tasks.map((item) => task(item.id, item.title))}
       {/* Add task */}
       {addTaskJSX()}
     </div>
