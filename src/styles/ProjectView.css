@@ -86,6 +86,7 @@
 .projectView__addTask {
   display: flex;
   align-items: center;
+  margin-top: 20px;
 }
 
 .projectView__addTask > p {

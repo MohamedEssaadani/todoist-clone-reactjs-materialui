@@ -7,8 +7,12 @@ const AddTask = ({ categoryId, addTask }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTaskTitle("");
-    addTask(categoryId, taskTitle);
+    if (taskTitle) {
+      addTask(categoryId, taskTitle);
+      setTaskTitle("");
+    } else {
+      alert("Title must be filled!");
+    }
   };
   return (
     <div
