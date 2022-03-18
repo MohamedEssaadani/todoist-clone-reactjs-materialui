@@ -5,25 +5,18 @@ import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutline
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
-import RadioButtonUncheckedOutlinedIcon from "@mui/icons-material/RadioButtonUncheckedOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
+import ProjectItem from "./ProjectItem";
 
 function ProjectView() {
   // add task jsx
-  const addTask = () => (
+  const addTaskJSX = () => (
     <div className="projectView__addTask">
       <AddOutlinedIcon />
       <p>Ajouter une tache </p>
     </div>
   );
 
-  // task jsx
-  const task = (title) => (
-    <div className="projectView__contentItemTask">
-      <RadioButtonUncheckedOutlinedIcon />
-      <p>{title}</p>
-    </div>
-  );
   return (
     <div className="projectView">
       <div className="projectView__header">
@@ -49,38 +42,14 @@ function ProjectView() {
       </div>
 
       <div className="projectView__content">
-        <div className="projectView__contentItem">
-          <p className="projectView__contentItemHeader">
-            <h3>TODO</h3>
-            <MoreHorizOutlinedIcon className="projectView__contentItemHeaderIcon" />
-          </p>
-          {/* Task */}
-          {task("Do Todoist clone backend")}
-          {/* Add task */}
-          {addTask()}
-        </div>
+        {/* Todo */}
+        <ProjectItem category={"TODO"} addTaskJSX={addTaskJSX} />
 
-        <div className="projectView__contentItem">
-          <p className="projectView__contentItemHeader">
-            <h3>IN PROGRESS</h3>
-            <MoreHorizOutlinedIcon className="projectView__contentItemHeaderIcon" />
-          </p>
-          {/* Task */}
-          {task("Do todoist clone front end")}
-          {/* Add task */}
-          {addTask()}
-        </div>
+        {/* In progress */}
+        <ProjectItem category={"IN PROGRESS"} addTaskJSX={addTaskJSX} />
 
-        <div className="projectView__contentItem">
-          <p className="projectView__contentItemHeader">
-            <h3>DONE</h3>
-            <MoreHorizOutlinedIcon className="projectView__contentItemHeaderIcon" />
-          </p>
-          {/* Task */}
-          {task("Do linkedin clone")}
-          {/* Add task */}
-          {addTask()}
-        </div>
+        {/* Done */}
+        <ProjectItem category={"DONE"} addTaskJSX={addTaskJSX} />
       </div>
     </div>
   );
