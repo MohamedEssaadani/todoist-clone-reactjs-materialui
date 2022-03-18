@@ -22,6 +22,7 @@ const AddTask = ({ categoryId, addTask }) => {
             type={"text"}
             value={taskTitle}
             onChange={(e) => setTaskTitle(e.target.value)}
+            placeholder="ex: doing..."
           />
           <button onClick={handleSubmit} type="submit" hidden></button>
         </form>

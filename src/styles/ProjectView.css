@@ -48,6 +48,7 @@
   flex: 1;
   margin-left: 20px;
   cursor: pointer;
+  top: 0%;
 }
 
 .projectView__contentItem:hover {
@@ -74,6 +75,7 @@
   padding: 10px;
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 
 .projectView__contentItemTask > p {
@@ -89,6 +91,10 @@
 .projectView__addTask > p {
   font-size: 13px;
   color: gray;
+}
+
+.projectView__addTask > form > input {
+  border: none;
 }
 
 .projectView__contentItemHeaderIcon:hover {
