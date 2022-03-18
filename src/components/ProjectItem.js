@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 // Material ui
-import RadioButtonUncheckedOutlinedIcon from "@mui/icons-material/RadioButtonUncheckedOutlined";
 import { MoreHorizOutlined } from "@mui/icons-material";
+import Task from "./Task";
+import AddTask from "./AddTask";
 
-function ProjectItem({ category, addTaskJSX }) {
+function ProjectItem({ category }) {
   const [tasks, setTasks] = useState([]);
 
   // if todo get tasks of todo
@@ -17,22 +18,27 @@ function ProjectItem({ category, addTaskJSX }) {
         "/byCategory?name=" +
         category.name
     );
-
     setTasks(data);
+  };
+
+  // add new task to api
+  const addTask = async (categoryId, taskTitle) => {
+    const { data } = await axios.post(
+      process.env.REACT_APP_BACKEND_URL +
+        "/" +
+        process.env.REACT_APP_TASK_SERVICE,
+      {
+        categoryId: categoryId,
+        title: taskTitle,
+      }
+    );
+    getTasks();
   };
 
   // use effect get tasks
   useEffect(() => {
     getTasks();
   }, [category]);
-
-  // task jsx
-  const task = (id, title) => (
-    <div className="projectView__contentItemTask" key={id}>
-      <RadioButtonUncheckedOutlinedIcon />
-      <p>{title}</p>
-    </div>
-  );
 
   return (
     <div className="projectView__contentItem" key={category.id}>
@@ -41,9 +47,9 @@ function ProjectItem({ category, addTaskJSX }) {
         <MoreHorizOutlined className="projectView__contentItemHeaderIcon" />
       </p>
       {/* Task */}
-      {tasks.map((item) => task(item.id, item.title))}
+      {tasks && tasks.map((item) => <Task task={item} />)}
       {/* Add task */}
-      {addTaskJSX(category.id)}
+      {<AddTask addTask={addTask} categoryId={category.id} />}
     </div>
   );
 }
