@@ -20,6 +20,7 @@ const AddTask = ({ categoryId, addTask }) => {
         <form>
           <input
             type={"text"}
+            className="projectView__addTaskInput"
             value={taskTitle}
             onChange={(e) => setTaskTitle(e.target.value)}
             placeholder="ex: doing..."

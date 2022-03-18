@@ -93,7 +93,8 @@
   color: gray;
 }
 
-.projectView__addTask > form > input {
+.projectView__addTaskInput {
+  outline: none;
   border: none;
 }
 
