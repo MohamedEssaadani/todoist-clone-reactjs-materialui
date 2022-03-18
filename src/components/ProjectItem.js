@@ -15,35 +15,17 @@ function ProjectItem({ category, addTaskJSX }) {
         "/" +
         process.env.REACT_APP_TASK_SERVICE +
         "/byCategory?name=" +
-        category
+        category.name
     );
 
     setTasks(data);
   };
 
-  // if in progress get tasks of in progress
-  const getInProgress = () => {
-    console.log(category);
-    setTasks([
-      {
-        id: 1,
-        title: "xyz in progress",
-      },
-      {
-        id: 2,
-        title: "sss inprogress",
-      },
-    ]);
-  };
-
-  // if done get tasks of done
-  const getDone = () => {
-    console.log(category);
-  };
-
+  // use effect get tasks
   useEffect(() => {
     getTasks();
   }, [category]);
+
   // task jsx
   const task = (id, title) => (
     <div className="projectView__contentItemTask" key={id}>
@@ -53,15 +35,15 @@ function ProjectItem({ category, addTaskJSX }) {
   );
 
   return (
-    <div className="projectView__contentItem">
+    <div className="projectView__contentItem" key={category.id}>
       <p className="projectView__contentItemHeader">
-        <h3>{category}</h3>
+        <h3>{category.name}</h3>
         <MoreHorizOutlined className="projectView__contentItemHeaderIcon" />
       </p>
       {/* Task */}
       {tasks.map((item) => task(item.id, item.title))}
       {/* Add task */}
-      {addTaskJSX()}
+      {addTaskJSX(category.id)}
     </div>
   );
 }
